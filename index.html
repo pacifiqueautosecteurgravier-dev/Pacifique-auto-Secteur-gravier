@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pacifique Auto Secteur Gravier – Gravier et sable à Douala</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#eef3f8;--surface:#fff;--ink:#0e1c2e;--muted:#52627a;--line:#d5deea;--navy:#0b2545;--blue:#13579b;--sky:#1d7fd6;--gold:#f5b700;color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1624;--surface:#122234;--ink:#e8eef6;--muted:#9db0c8;--line:#233a54;--navy:#06101d;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0b1624;--surface:#122234;--ink:#e8eef6;--muted:#9db0c8;--line:#233a54;--navy:#06101d;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Public Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+h1,h2,h3{font-family:"Archivo Narrow","Arial Narrow",Arial,sans-serif;line-height:1.1;margin:0}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.btn{display:inline-block;background:var(--gold);color:#0e1c2e;font:600 16px "Public Sans",sans-serif;text-decoration:none;padding:13px 22px;border:0;border-radius:4px;cursor:pointer}
+.btn.line{background:transparent;color:#fff;border:2px solid #fff}
+.btn:focus-visible,input:focus-visible,select:focus-visible,.tab:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.top{background:var(--navy);color:#b9c9de;font-size:14px;padding:8px 0}
+.top .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.top a{color:#fff;text-decoration:none;font-weight:600}
+header{background:var(--blue);color:#fff}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:16px;padding-bottom:16px}
+.brand{font:700 22px/1.1 "Archivo Narrow",Arial,sans-serif;text-decoration:none}
+nav{display:none;gap:24px}nav a{text-decoration:none;font-weight:500}nav a:hover{text-decoration:underline}
+@media(min-width:860px){nav{display:flex}}
+.hero{background:linear-gradient(160deg,rgba(11,37,69,.62),rgba(19,87,155,.16)),url(hero.jpg) center 62%/cover no-repeat;background-color:var(--navy);color:#fff}
+.hero .wrap{display:grid;gap:28px;align-items:center;padding-top:48px;padding-bottom:48px}
+
+.hero h1{font-size:clamp(38px,7vw,64px);font-weight:700}
+.hero p{color:#c9d8ea;max-width:48ch;margin:16px 0 26px}
+.acts{display:flex;flex-wrap:wrap;gap:12px}
+.hero svg{width:100%;height:auto}
+.stats{background:var(--surface);border-bottom:1px solid var(--line)}
+.stats .wrap{display:grid;grid-template-columns:repeat(2,1fr)}
+@media(min-width:860px){.stats .wrap{grid-template-columns:repeat(4,1fr)}}
+.stats div{padding:20px 16px;border-left:1px solid var(--line)}
+.stats div:first-child{border-left:0}
+.stats b{display:block;font:700 24px "Archivo Narrow",Arial,sans-serif;color:var(--blue)}
+.stats span{font-size:15px;color:var(--muted)}
+section{padding:60px 0}
+section h2{font-size:clamp(30px,4.6vw,42px);color:var(--blue);margin-bottom:8px}
+.lead{color:var(--muted);max-width:60ch;margin:0 0 30px}
+.grid{display:grid;gap:20px}
+@media(min-width:860px){.grid{grid-template-columns:repeat(4,1fr)}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
+.card svg{display:block;width:100%;height:auto;background:#dbe8f5}
+.card .b{padding:20px;display:grid;gap:8px;flex:1;align-content:start}
+.card h3{font-size:26px}
+.card .cal{display:inline-block;justify-self:start;background:var(--blue);color:#fff;font-weight:600;font-size:14px;padding:3px 10px;border-radius:3px}
+.card p{margin:0;color:var(--muted)}
+.card .btn{justify-self:start;margin-top:8px}
+.alt{background:var(--surface);border-block:1px solid var(--line)}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.tab{font:600 16px "Public Sans",sans-serif;padding:12px 18px;border:2px solid var(--blue);background:transparent;color:var(--blue);border-radius:4px;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--blue);color:#fff}
+.panel{background:var(--bg);border-left:8px solid var(--gold);padding:24px;display:grid;gap:14px;justify-items:start}
+.panel h3{font-size:30px}.panel p{margin:0;color:var(--muted);max-width:62ch}.panel ul{margin:0;padding-left:20px}
+.steps{display:grid;gap:0;counter-reset:s;border:1px solid var(--line);background:var(--surface)}
+.steps div{padding:22px 24px;border-bottom:1px solid var(--line)}
+.steps div:last-child{border-bottom:0}
+.steps h3{font-size:24px;margin-bottom:6px}.steps h3::before{counter-increment:s;content:counter(s)". ";color:var(--sky)}
+.steps p{margin:0;color:var(--muted)}
+@media(min-width:860px){.steps{grid-template-columns:repeat(3,1fr)}.steps div{border-bottom:0;border-right:1px solid var(--line)}.steps div:last-child{border-right:0}}
+.contact{display:grid;gap:32px}
+@media(min-width:860px){.contact{grid-template-columns:.9fr 1.1fr}}
+.info p{margin:0 0 12px}.info strong{display:block;font-size:15px;color:var(--muted);font-weight:500}
+form{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:24px;display:grid;gap:14px}
+label{display:grid;gap:6px;font-weight:600;font-size:15px}
+input,select{font:inherit;padding:12px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink);width:100%}
+footer{background:var(--navy);color:#9db0c8;padding:28px 0 40px;font-size:15px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+header .wrap{flex-wrap:wrap}
+.partner{display:grid;justify-items:end;border-left:2px solid rgba(255,255,255,.35);padding-left:16px;line-height:1.1}
+.partner small{font-size:12px;color:#c9d8ea;letter-spacing:.5px;text-transform:uppercase}
+.partner b{font:700 26px "Archivo Narrow",Arial,sans-serif;letter-spacing:2px}
+.fleet{display:grid;gap:20px}
+@media(min-width:860px){.fleet{grid-template-columns:repeat(6,1fr)}.fleet .card{grid-column:span 2}.fleet .card:nth-child(n+4){grid-column:span 3}}
+.fleet .card svg{background:linear-gradient(#dbe8f5,#eef3f8)}
+.fleet ul{margin:0;padding-left:20px;color:var(--muted)}
+.brand{display:flex;align-items:center;gap:12px}.logo{width:58px;height:58px;border-radius:50%;background:#fff;flex:none}
+.fleet .card img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.partner img{display:block;height:46px;width:auto;margin-top:6px;border-radius:4px;background:rgb(52,135,255)}
+.grid .card img{display:block;width:100%;aspect-ratio:5/3;object-fit:cover}
+.hero .wrap{padding-top:84px;padding-bottom:84px}
+.hero h1,.hero p{text-shadow:0 2px 16px rgba(0,0,0,.65)}
+.hero p{color:#e3ecf7}
+@media(max-width:859px){
+  header .wrap{flex-wrap:nowrap;gap:10px}
+  header .wrap>.btn{display:none}
+  .brand{font-size:17px;gap:8px}.logo{width:44px;height:44px}
+  .partner{padding-left:10px;margin-left:auto}
+  .partner small{font-size:9px}.partner img{height:32px;margin-top:4px}
+  .hero .wrap{padding-top:56px;padding-bottom:56px}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<pattern id="g1" width="14" height="14" patternUnits="userSpaceOnUse"><rect width="14" height="14" fill="#8a929a"/><ellipse cx="4" cy="4" rx="3.2" ry="2.5" fill="#b9bfc5"/><ellipse cx="11" cy="6" rx="2.6" ry="2" fill="#6c747c"/><ellipse cx="6" cy="11" rx="3" ry="2.2" fill="#a2a9af"/><ellipse cx="12" cy="12" rx="2.2" ry="1.8" fill="#cbd0d4"/></pattern>
+<pattern id="g2" width="28" height="28" patternUnits="userSpaceOnUse"><rect width="28" height="28" fill="#7d858d"/><ellipse cx="8" cy="8" rx="7" ry="5" fill="#b3b9bf"/><ellipse cx="21" cy="12" rx="5.5" ry="4.5" fill="#646c74"/><ellipse cx="11" cy="21" rx="6.5" ry="5" fill="#9aa1a8"/><ellipse cx="23" cy="23" rx="4.5" ry="3.5" fill="#c4c9ce"/></pattern>
+<pattern id="sd" width="9" height="9" patternUnits="userSpaceOnUse"><rect width="9" height="9" fill="#d9bd8a"/><circle cx="2" cy="2" r="1" fill="#b89a66"/><circle cx="6.5" cy="5" r="1" fill="#efd9ae"/><circle cx="3" cy="7" r=".8" fill="#c9a972"/></pattern>
+</defs></svg>
+
+<div class="top"><div class="wrap"><span>Douala, Yassa, en face de l’usine Broli · 7 h – 18 h</span><a id="wa0" href="#">WhatsApp +237 696 65 11 16</a></div></div>
+<header><div class="wrap">
+  <a class="brand" href="#"><img class="logo" src="logo.jpg" alt="Logo Pacifique Auto SARL"><span>Pacifique Auto<br>Secteur Gravier</span></a>
+  <nav aria-label="Menu"><a href="#produits">Produits</a><a href="#secteurs">Secteurs</a><a href="#flotte">Flotte</a><a href="#livraison">Livraison</a><a href="#devis">Contact</a></nav>
+  <a class="btn" href="#devis">Demander un devis</a>
+  <div class="partner"><small>Partenaire officiel</small><img src="razel.png" alt="RAZEL-BEC Fayat, partenaire officiel"></div>
+</div></header>
+
+<div class="hero"><div class="wrap">
+  <div>
+    <h1>Gravier et sable de carrière, livrés par camion.</h1>
+    <p>Des matériaux concassés pour vos bétons, vos routes et vos fondations. Chaque camion est pesé à notre pont-bascule, et son poids s’affiche devant le chauffeur avant le départ.</p>
+    <div class="acts"><a class="btn" href="#devis">Demander un devis</a><a class="btn line" href="#produits">Voir nos produits</a></div>
+  </div>
+</div></div>
+
+<div class="stats"><div class="wrap">
+  <div><b>7 h – 18 h</b><span>Ouvert pour le chargement</span></div>
+  <div><b>Pont-bascule</b><span>Poids visible par le chauffeur</span></div>
+  <div><b>Camions bennes</b><span>Livraison sur votre chantier</span></div>
+  <div><b>Devis rapide</b><span>Réponse par WhatsApp</span></div>
+</div></div>
+
+<section id="produits"><div class="wrap">
+  <h2>Nos produits</h2>
+  <p class="lead">Du gravier de deux calibres, du sable et des moellons. Vendus à la tonne ou au camion.</p>
+  <div class="grid">
+    <article class="card">
+      <img src="gravier.jpg" alt="Tas de gravier concassé 5/15" loading="lazy">
+      <div class="b"><span class="cal">5/15 mm</span><h3>Gravier fin</h3><p>Béton armé, dalles, poteaux et poutres.</p><button class="btn pick" data-p="Gravier 5/15" type="button">Demander ce produit</button></div>
+    </article>
+    <article class="card">
+      <img src="gravier2.jpg" alt="Tas de gravier concassé 15/25" loading="lazy" style="object-position:center 65%">
+      <div class="b"><span class="cal">15/25 mm</span><h3>Gravier moyen</h3><p>Béton de fondation, voirie et plateformes.</p><button class="btn pick" data-p="Gravier 15/25" type="button">Demander ce produit</button></div>
+    </article>
+    <article class="card">
+      <img src="sable.jpg" alt="Tas de sable en carrière" loading="lazy" style="object-position:center 30%">
+      <div class="b"><span class="cal">0/5 mm</span><h3>Sable concassé</h3><p>Mortier, chape, enduits et parpaings.</p><button class="btn pick" data-p="Sable concassé 0/5" type="button">Demander ce produit</button></div>
+    </article>
+    <article class="card">
+      <img src="moellons.jpg" alt="Tas de moellons" loading="lazy">
+      <div class="b"><span class="cal">Sur demande</span><h3>Moellons</h3><p>Grosses pierres pour fondations, murs de soutènement et enrochements.</p><button class="btn pick" data-p="Moellons" type="button">Demander ce produit</button></div>
+    </article>
+  </div>
+</div></section>
+
+<section id="secteurs" class="alt"><div class="wrap">
+  <h2>Nos secteurs d’activité</h2>
+  <p class="lead">Choisissez votre domaine pour voir le matériau qui convient.</p>
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <div class="panel" id="panel" role="tabpanel" aria-live="polite"></div>
+</div></section>
+
+<section id="flotte"><div class="wrap">
+  <h2>Notre flotte</h2>
+  <p class="lead">Des camions et des engins de carrière pour charger et livrer vos matériaux sans retard.</p>
+  <div class="fleet">
+    <article class="card"><img src="camions.jpg" alt="Parc de camions bennes blancs alignés" loading="lazy">
+      <div class="b"><span class="cal">Notre parc</span><h3>Camions bennes</h3><p>Une flotte de camions bennes pour livrer vos matériaux sans attendre.</p></div></article>
+    <article class="card"><img src="howo400.jpg" alt="Camion benne HOWO 400, 12 roues" loading="lazy">
+      <div class="b"><span class="cal">12 roues · HOWO 400</span><h3>Camion benne 8×4</h3><p>Notre camion de grande capacité pour livrer de grosses quantités de gravier et de sable.</p></div></article>
+    <article class="card"><img src="howo.jpg" alt="Camion benne HOWO 371" loading="lazy">
+      <div class="b"><span class="cal">HOWO 371</span><h3>Camion benne HOWO</h3><p>Des camions robustes pour transporter gravier et sable sur tous les chantiers.</p></div></article>
+    <article class="card"><img src="mercedes.jpg" alt="Camion benne Mercedes-Benz blanc" loading="lazy">
+      <div class="b"><span class="cal">Mercedes-Benz</span><h3>Camion benne Mercedes</h3><p>Pour les livraisons de gravier et de sable en ville et sur les chantiers.</p></div></article>
+    <article class="card"><img src="chargeuse.jpg" alt="Chargeuse sur pneus jaune en carrière" loading="lazy">
+      <div class="b"><span class="cal">Chargeuse</span><h3>Chargeuse sur pneus</h3><p>Pour charger vite les camions en carrière, avec le bon matériau à chaque fois.</p></div></article>
+  </div>
+</div></section>
+
+<section id="livraison"><div class="wrap">
+  <h2>Comment ça marche</h2>
+  <p class="lead">De la commande au départ du camion, en trois étapes.</p>
+  <div class="steps">
+    <div><h3>Vous commandez</h3><p>Envoyez votre demande par WhatsApp : produit, quantité et lieu de livraison.</p></div>
+    <div><h3>Nous chargeons</h3><p>Le camion est chargé en carrière, à Yassa, du matériau choisi.</p></div>
+    <div><h3>Nous pesons</h3><p>Le camion passe sur le pont-bascule. Le poids s’affiche à l’extérieur, devant le chauffeur.</p></div>
+  </div>
+</div></section>
+
+<section id="devis" class="alt"><div class="wrap">
+  <h2>Demandez un devis</h2>
+  <p class="lead">Dites-nous ce qu’il vous faut. Nous vous répondons par WhatsApp avec le prix et la date de chargement.</p>
+  <div class="contact">
+    <div class="info">
+      <p><strong>WhatsApp</strong><a id="wa" href="#">+237 696 65 11 16</a></p>
+      <p><strong>Adresse</strong>Douala, Yassa, en face de l’usine Broli</p>
+      <p><strong>Horaires</strong>7 h – 18 h</p>
+    </div>
+    <form id="f">
+      <label>Votre nom<input name="nom" required autocomplete="name"></label>
+      <label>Produit<select name="produit"><option>Gravier 5/15</option><option>Gravier 15/25</option><option>Sable concassé 0/5</option><option>Moellons</option></select></label>
+      <label>Quantité (tonnes ou nombre de camions)<input name="qte" required placeholder="Ex. : 3 camions"></label>
+      <label>Lieu de livraison<input name="lieu" placeholder="Ex. : Douala, Logbessou"></label>
+      <button class="btn" type="submit">Envoyer ma demande par WhatsApp</button>
+    </form>
+  </div>
+</div></section>
+
+<footer><div class="wrap">© <span id="y"></span> Pacifique Auto Secteur Gravier. Gravier et sable pour le bâtiment et les travaux publics.</div></footer>
+
+<script>
+var CFG={wa:"237696651116"},link="https://wa.me/"+CFG.wa;
+document.getElementById("wa").href=link;document.getElementById("wa0").href=link;
+document.getElementById("y").textContent=new Date().getFullYear();
+function pick(p){document.querySelector("select[name=produit]").value=p;document.getElementById("devis").scrollIntoView()}
+Array.prototype.forEach.call(document.querySelectorAll(".pick"),function(b){b.addEventListener("click",function(){pick(b.dataset.p)})});
+document.getElementById("f").addEventListener("submit",function(e){
+  e.preventDefault();var d=new FormData(e.target);
+  var t="Bonjour, je souhaite un devis.\nNom : "+d.get("nom")+"\nProduit : "+d.get("produit")+"\nQuantité : "+d.get("qte")+"\nLivraison : "+(d.get("lieu")||"à préciser");
+  window.open(link+"?text="+encodeURIComponent(t),"_blank","noopener");
+});
+var S=[
+ {n:"Bâtiment",t:"Maisons, immeubles et dalles",d:"Pour couler un béton solide, il faut un gravier propre et un sable régulier.",l:["Dalles, poteaux et poutres","Fondations et semelles","Murs, enduits et chapes"],p:"Gravier 5/15"},
+ {n:"Routes et travaux publics",t:"Voirie, plateformes et drainage",d:"Du gravier en grande quantité, livré par camions pour vos chantiers de route.",l:["Couches de voirie","Plateformes et parkings","Drainage et caniveaux"],p:"Gravier 15/25"},
+ {n:"Béton et fabricants",t:"Centrales à béton, parpaings et hourdis",d:"Un approvisionnement régulier pour les producteurs de béton et de blocs.",l:["Centrales à béton","Fabrication de parpaings","Hourdis et éléments préfabriqués"],p:"Sable concassé 0/5"},
+ {n:"Particuliers",t:"Petits chantiers et constructions",d:"Vous construisez votre maison ? Commandez au camion, nous livrons sur place.",l:["Livraison par camion","Conseil sur le produit adapté","Pesée visible avant le départ"],p:"Gravier 5/15"}
+];
+var tabs=document.getElementById("tabs"),panel=document.getElementById("panel");
+function show(i){
+  var s=S[i];
+  Array.prototype.forEach.call(tabs.children,function(b,j){b.setAttribute("aria-selected",j===i?"true":"false")});
+  panel.innerHTML="";
+  var h=document.createElement("h3");h.textContent=s.t;panel.appendChild(h);
+  var p=document.createElement("p");p.textContent=s.d;panel.appendChild(p);
+  var ul=document.createElement("ul");
+  s.l.forEach(function(x){var li=document.createElement("li");li.textContent=x;ul.appendChild(li)});
+  panel.appendChild(ul);
+  var a=document.createElement("button");a.type="button";a.className="btn";a.textContent="Demander "+s.p;
+  a.addEventListener("click",function(){pick(s.p)});panel.appendChild(a);
+}
+S.forEach(function(s,i){
+  var b=document.createElement("button");b.type="button";b.className="tab";b.setAttribute("role","tab");b.textContent=s.n;
+  b.addEventListener("click",function(){show(i)});tabs.appendChild(b);
+});
+show(0);
+</script>
+</body>
+</html>
