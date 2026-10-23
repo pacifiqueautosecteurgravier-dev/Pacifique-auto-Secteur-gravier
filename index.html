@@ -80,7 +80,7 @@ header .wrap{flex-wrap:wrap}
 .partner small{font-size:12px;color:#c9d8ea;letter-spacing:.5px;text-transform:uppercase}
 .partner b{font:700 26px "Archivo Narrow",Arial,sans-serif;letter-spacing:2px}
 .fleet{display:grid;gap:20px}
-@media(min-width:860px){.fleet{grid-template-columns:repeat(6,1fr)}.fleet .card{grid-column:span 2}.fleet .card:nth-child(n+4){grid-column:span 3}}
+@media(min-width:860px){.fleet{grid-template-columns:repeat(6,1fr)}.fleet .card{grid-column:span 2}}
 .fleet .card svg{background:linear-gradient(#dbe8f5,#eef3f8)}
 .fleet ul{margin:0;padding-left:20px;color:var(--muted)}
 .brand{display:flex;align-items:center;gap:12px}.logo{width:58px;height:58px;border-radius:50%;background:#fff;flex:none}
@@ -98,6 +98,10 @@ header .wrap{flex-wrap:wrap}
   .partner small{font-size:9px}.partner img{height:32px;margin-top:4px}
   .hero .wrap{padding-top:56px;padding-bottom:56px}
 }
+.works{display:grid;gap:20px}
+@media(min-width:860px){.works{grid-template-columns:repeat(6,1fr)}.works .card{grid-column:span 2}.works .card:nth-child(n+4){grid-column:span 3}}
+.works .card img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.works .card .b{padding:16px 20px}.works .card h3{font-size:22px}
 </style>
 </head>
 <body>
@@ -110,7 +114,7 @@ header .wrap{flex-wrap:wrap}
 <div class="top"><div class="wrap"><span>Douala, Yassa, en face de l’usine Broli · 7 h – 18 h</span><a id="wa0" href="#">WhatsApp +237 696 65 11 16</a></div></div>
 <header><div class="wrap">
   <a class="brand" href="#"><img class="logo" src="logo.jpg" alt="Logo Pacifique Auto SARL"><span>Pacifique Auto<br>Secteur Gravier</span></a>
-  <nav aria-label="Menu"><a href="#produits">Produits</a><a href="#secteurs">Secteurs</a><a href="#flotte">Flotte</a><a href="#livraison">Livraison</a><a href="#devis">Contact</a></nav>
+  <nav aria-label="Menu"><a href="#produits">Produits</a><a href="#secteurs">Secteurs</a><a href="#flotte">Flotte</a><a href="#chantiers">Chantiers</a><a href="#livraison">Livraison</a><a href="#devis">Contact</a></nav>
   <a class="btn" href="#devis">Demander un devis</a>
   <div class="partner"><small>Partenaire officiel</small><img src="razel.png" alt="RAZEL-BEC Fayat, partenaire officiel"></div>
 </div></header>
@@ -168,12 +172,31 @@ header .wrap{flex-wrap:wrap}
       <div class="b"><span class="cal">Notre parc</span><h3>Camions bennes</h3><p>Une flotte de camions bennes pour livrer vos matériaux sans attendre.</p></div></article>
     <article class="card"><img src="howo400.jpg" alt="Camion benne HOWO 400, 12 roues" loading="lazy">
       <div class="b"><span class="cal">12 roues · HOWO 400</span><h3>Camion benne 8×4</h3><p>Notre camion de grande capacité pour livrer de grosses quantités de gravier et de sable.</p></div></article>
+    <article class="card"><img src="hohan.jpg" alt="Camion benne Sinotruk HOHAN 8x4" loading="lazy" style="object-position:center 72%">
+      <div class="b"><span class="cal">Sinotruk HOHAN</span><h3>Camion benne HOHAN 8×4</h3><p>Camion benne de chantier pour livrer gravier et sable en grandes quantités.</p></div></article>
     <article class="card"><img src="howo.jpg" alt="Camion benne HOWO 371" loading="lazy">
       <div class="b"><span class="cal">HOWO 371</span><h3>Camion benne HOWO</h3><p>Des camions robustes pour transporter gravier et sable sur tous les chantiers.</p></div></article>
     <article class="card"><img src="mercedes.jpg" alt="Camion benne Mercedes-Benz blanc" loading="lazy">
       <div class="b"><span class="cal">Mercedes-Benz</span><h3>Camion benne Mercedes</h3><p>Pour les livraisons de gravier et de sable en ville et sur les chantiers.</p></div></article>
     <article class="card"><img src="chargeuse.jpg" alt="Chargeuse sur pneus jaune en carrière" loading="lazy">
       <div class="b"><span class="cal">Chargeuse</span><h3>Chargeuse sur pneus</h3><p>Pour charger vite les camions en carrière, avec le bon matériau à chaque fois.</p></div></article>
+  </div>
+</div></section>
+
+<section id="chantiers" class="alt"><div class="wrap">
+  <h2>Nos chantiers avec RAZEL</h2>
+  <p class="lead">Des ouvrages réalisés avec notre partenaire RAZEL-BEC, où nos matériaux font la différence.</p>
+  <div class="works">
+    <article class="card"><img src="stadetravaux.jpg" alt="Construction du stade d’Olembe" loading="lazy">
+      <div class="b"><span class="cal">Chantier</span><h3>Construction du stade d’Olembe</h3></div></article>
+    <article class="card"><img src="pont.jpg" alt="Pont sur le Logone" loading="lazy">
+      <div class="b"><span class="cal">Chantier</span><h3>Pont sur le Logone</h3></div></article>
+    <article class="card"><img src="pontmetal.jpg" alt="Pont sur le fleuve Lom, à l’est" loading="lazy">
+      <div class="b"><span class="cal">Chantier</span><h3>Pont sur le fleuve Lom, à l’est</h3></div></article>
+    <article class="card"><img src="ville.jpg" alt="Échangeur d’Olembe" loading="lazy">
+      <div class="b"><span class="cal">Chantier</span><h3>Échangeur d’Olembe</h3></div></article>
+    <article class="card"><img src="stade.jpg" alt="Chantier du stade de Bepanda" loading="lazy">
+      <div class="b"><span class="cal">Chantier</span><h3>Chantier du stade de Bepanda</h3></div></article>
   </div>
 </div></section>
 
@@ -193,6 +216,7 @@ header .wrap{flex-wrap:wrap}
   <div class="contact">
     <div class="info">
       <p><strong>WhatsApp</strong><a id="wa" href="#">+237 696 65 11 16</a></p>
+      <p><strong>Téléphone</strong><a href="tel:+237670303865">+237 670 30 38 65</a></p>
       <p><strong>Adresse</strong>Douala, Yassa, en face de l’usine Broli</p>
       <p><strong>Horaires</strong>7 h – 18 h</p>
     </div>
