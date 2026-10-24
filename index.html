@@ -12,7 +12,7 @@
 --bg:#eef3f8;--surface:#fff;--ink:#0e1c2e;--muted:#52627a;--line:#d5deea;--navy:#0b2545;--blue:#13579b;--sky:#1d7fd6;--gold:#f5b700;color-scheme:light}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1624;--surface:#122234;--ink:#e8eef6;--muted:#9db0c8;--line:#233a54;--navy:#06101d;color-scheme:dark}}
 :root[data-theme="dark"]{--bg:#0b1624;--surface:#122234;--ink:#e8eef6;--muted:#9db0c8;--line:#233a54;--navy:#06101d;color-scheme:dark}
-html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 60px);scroll-behavior:smooth}
 *,*::before,*::after{box-sizing:inherit}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Public Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
 h1,h2,h3{font-family:"Archivo Narrow","Arial Narrow",Arial,sans-serif;line-height:1.1;margin:0}
@@ -27,8 +27,6 @@ a{color:inherit}
 header{background:var(--blue);color:#fff}
 header .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:16px;padding-bottom:16px}
 .brand{font:700 22px/1.1 "Archivo Narrow",Arial,sans-serif;text-decoration:none}
-nav{display:none;gap:24px}nav a{text-decoration:none;font-weight:500}nav a:hover{text-decoration:underline}
-@media(min-width:860px){nav{display:flex}}
 .hero{background:linear-gradient(160deg,rgba(11,37,69,.62),rgba(19,87,155,.16)),url(hero.jpg) center 62%/cover no-repeat;background-color:var(--navy);color:#fff}
 .hero .wrap{display:grid;gap:28px;align-items:center;padding-top:48px;padding-bottom:48px}
 
@@ -73,19 +71,15 @@ section h2{font-size:clamp(30px,4.6vw,42px);color:var(--blue);margin-bottom:8px}
 form{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:24px;display:grid;gap:14px}
 label{display:grid;gap:6px;font-weight:600;font-size:15px}
 input,select{font:inherit;padding:12px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink);width:100%}
-footer{background:var(--navy);color:#9db0c8;padding:28px 0 40px;font-size:15px}
+footer{background:var(--navy);color:#b9c9de;padding:0;font-size:15px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 header .wrap{flex-wrap:wrap}
-.partner{display:grid;justify-items:end;border-left:2px solid rgba(255,255,255,.35);padding-left:16px;line-height:1.1}
-.partner small{font-size:12px;color:#c9d8ea;letter-spacing:.5px;text-transform:uppercase}
-.partner b{font:700 26px "Archivo Narrow",Arial,sans-serif;letter-spacing:2px}
 .fleet{display:grid;gap:20px}
 @media(min-width:860px){.fleet{grid-template-columns:repeat(6,1fr)}.fleet .card{grid-column:span 2}}
 .fleet .card svg{background:linear-gradient(#dbe8f5,#eef3f8)}
 .fleet ul{margin:0;padding-left:20px;color:var(--muted)}
 .brand{display:flex;align-items:center;gap:12px}.logo{width:58px;height:58px;border-radius:50%;background:#fff;flex:none}
 .fleet .card img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
-.partner img{display:block;height:46px;width:auto;margin-top:6px;border-radius:4px;background:rgb(52,135,255)}
 .grid .card img{display:block;width:100%;aspect-ratio:5/3;object-fit:cover}
 .hero .wrap{padding-top:84px;padding-bottom:84px}
 .hero h1,.hero p{text-shadow:0 2px 16px rgba(0,0,0,.65)}
@@ -94,14 +88,72 @@ header .wrap{flex-wrap:wrap}
   header .wrap{flex-wrap:nowrap;gap:10px}
   header .wrap>.btn{display:none}
   .brand{font-size:17px;gap:8px}.logo{width:44px;height:44px}
-  .partner{padding-left:10px;margin-left:auto}
-  .partner small{font-size:9px}.partner img{height:32px;margin-top:4px}
   .hero .wrap{padding-top:56px;padding-bottom:56px}
 }
 .works{display:grid;gap:20px}
 @media(min-width:860px){.works{grid-template-columns:repeat(6,1fr)}.works .card{grid-column:span 2}.works .card:nth-child(n+4){grid-column:span 3}}
 .works .card img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
 .works .card .b{padding:16px 20px}.works .card h3{font-size:22px}
+
+.js .rv{opacity:0;translate:0 26px;transition:opacity .7s ease,translate .7s ease}
+.js .rv.in{opacity:1;translate:0 0}
+.card{transition:transform .3s ease,box-shadow .3s ease,opacity .7s ease,translate .7s ease}
+.card:hover{transform:translateY(-5px);box-shadow:0 16px 32px rgba(11,37,69,.2)}
+.card img{transition:transform .7s ease}
+.card:hover img{transform:scale(1.08)}
+.grid .card img,.fleet .card img,.works .card img{cursor:zoom-in}
+.btn{transition:transform .2s ease,box-shadow .2s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
+.lb{position:fixed;inset:0;background:rgba(5,12,22,.93);display:none;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:20px;z-index:50}
+.lb.open{display:flex}
+.lb img{max-width:100%;max-height:80vh;border-radius:6px;animation:lbz .3s ease}
+.lb p{color:#fff;margin:0;font-weight:600}
+.lb button{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:16px;background:#fff;color:#0e1c2e;border:0;border-radius:50%;width:44px;height:44px;font-size:24px;cursor:pointer}
+@keyframes lbz{from{transform:scale(.9);opacity:0}}
+@media(prefers-reduced-motion:reduce){.card,.card img,.btn{transition:none}.card:hover,.btn:hover{transform:none}.card:hover img{transform:none}.lb img{animation:none}}
+.fgrid{display:grid;gap:32px;padding-top:48px;padding-bottom:40px}
+@media(min-width:860px){.fgrid{grid-template-columns:1.2fr 1fr 1fr}}
+.flogo{width:84px;height:84px;border-radius:50%;background:#fff;display:block;margin-bottom:14px}
+.fabout p{margin:0;max-width:38ch}
+footer h4{font:700 20px "Archivo Narrow",Arial,sans-serif;color:#fff;margin:0 0 18px;padding-bottom:10px;position:relative}
+footer h4::after{content:"";position:absolute;left:0;bottom:0;width:36px;height:3px;background:var(--sky)}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+footer a{text-decoration:none}footer ul a:hover{color:#fff;text-decoration:underline}
+.fbar{background:var(--blue);color:#fff}
+.fbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:12px;padding-bottom:calc(12px + env(safe-area-inset-bottom,0px))}
+.fbar .top{display:grid;place-items:center;width:44px;height:44px;background:#0b2545;color:#fff;font-size:22px;border-radius:4px}
+#secteurs .panel{background:var(--surface);border:1px solid var(--line);border-left:8px solid var(--gold)}
+.cls{display:grid;place-items:center;background:linear-gradient(160deg,var(--navy),var(--blue));color:#fff;font:700 40px "Archivo Narrow",Arial,sans-serif;letter-spacing:1px;padding:30px 10px}
+.alliance{display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);border-left:8px solid var(--gold);padding:14px 18px;margin-bottom:24px}
+.alliance img{height:54px;width:auto;border-radius:4px;background:#fff}
+.mainnav{background:var(--navy);color:#fff;position:sticky;top:env(safe-area-inset-top,0px);z-index:20}
+.mainnav .wrap{position:relative;display:flex;align-items:center;min-height:52px}
+.menu,.sub{list-style:none;margin:0;padding:0}
+.menu{display:flex}
+.menu>li{position:relative;border-top:4px solid transparent}
+.menu>li.on{border-top-color:var(--gold)}
+.menu a,.menu button{display:block;width:100%;text-align:left;color:#fff;background:none;border:0;font:600 16px "Public Sans",sans-serif;padding:14px 18px;text-decoration:none;cursor:pointer}
+.menu a:hover,.menu button:hover{background:rgba(255,255,255,.09)}
+.menu a:focus-visible,.menu button:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
+.sub{display:none;position:absolute;left:0;top:100%;min-width:240px;padding:6px 0;background:var(--navy);border-top:3px solid var(--sky);box-shadow:0 14px 28px rgba(0,0,0,.4)}
+.sub a{font-weight:500;padding:11px 18px}
+.dd.open .sub{display:block}
+@media(hover:hover){.dd:hover .sub{display:block}}
+@media(max-width:759px){
+  .mainnav .wrap{padding:0}
+  .menu{width:100%;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .menu::-webkit-scrollbar{display:none}
+  .menu>li{flex:0 0 auto}
+  .menu a,.menu button{width:auto;white-space:nowrap;font-size:clamp(12.5px,3.7vw,15px);padding:13px clamp(7px,2.2vw,13px)}
+  .sub{position:fixed;left:0;right:0;top:var(--navb,100px);min-width:0;max-height:70vh;overflow-y:auto}
+  .sub a{font-size:16px;padding:13px 20px}
+}
+@media(prefers-reduced-motion:reduce){.menu a,.menu button{transition:none}}
+.ph{display:grid;justify-items:center;gap:5px;padding-left:16px;border-left:2px solid rgba(255,255,255,.35)}
+.ph .lg{display:flex;align-items:center;gap:12px}
+.ph img{display:block;height:40px;width:auto;border-radius:4px;background:#fff}
+.ph small{font-size:10px;letter-spacing:.6px;text-transform:uppercase;color:#c9d8ea;text-align:center;line-height:1.1}
+@media(max-width:759px){.ph{padding-left:8px;margin-left:auto;gap:3px}.ph .lg{gap:8px}.ph img{height:26px}.ph small{font-size:8.5px;letter-spacing:.3px}}
 </style>
 </head>
 <body>
@@ -114,10 +166,24 @@ header .wrap{flex-wrap:wrap}
 <div class="top"><div class="wrap"><span>Douala, Yassa, en face de l’usine Broli · 7 h – 18 h</span><a id="wa0" href="#">WhatsApp +237 696 65 11 16</a></div></div>
 <header><div class="wrap">
   <a class="brand" href="#"><img class="logo" src="logo.jpg" alt="Logo Pacifique Auto SARL"><span>Pacifique Auto<br>Secteur Gravier</span></a>
-  <nav aria-label="Menu"><a href="#produits">Produits</a><a href="#secteurs">Secteurs</a><a href="#flotte">Flotte</a><a href="#chantiers">Chantiers</a><a href="#livraison">Livraison</a><a href="#devis">Contact</a></nav>
   <a class="btn" href="#devis">Demander un devis</a>
-  <div class="partner"><small>Partenaire officiel</small><img src="razel.png" alt="RAZEL-BEC Fayat, partenaire officiel"></div>
+  <div class="ph" aria-label="Nos partenaires">
+    <div class="lg"><img src="razel.png" alt="RAZEL-BEC"><img src="fcc.jpg" alt="Force Construction Company"></div>
+    <small>Partenaire officiel</small>
+  </div>
 </div></header>
+<nav class="mainnav" aria-label="Menu principal"><div class="wrap">
+  <ul class="menu" id="menu">
+    <li data-sec="top"><a href="#">Accueil</a></li>
+    <li class="dd" data-sec="secteurs flotte livraison"><button type="button" aria-haspopup="true" aria-expanded="false">Société <span aria-hidden="true">▾</span></button>
+      <ul class="sub"><li><a href="#secteurs">Secteurs d’activité</a></li><li><a href="#flotte">Notre flotte</a></li><li><a href="#livraison">Comment ça marche</a></li></ul></li>
+    <li class="dd" data-sec="produits beton"><button type="button" aria-haspopup="true" aria-expanded="false">Produits <span aria-hidden="true">▾</span></button>
+      <ul class="sub"><li><a href="#produits">Gravier 5/15 mm</a></li><li><a href="#produits">Gravier 15/25 mm</a></li><li><a href="#produits">Sable concassé 0/5 mm</a></li><li><a href="#produits">Moellons</a></li><li><a href="#beton">Béton prémélangé</a></li></ul></li>
+    <li data-sec="chantiers"><a href="#chantiers">Chantiers</a></li>
+    <li data-sec="devis"><a href="#devis">Contact</a></li>
+  </ul>
+</div></nav>
+
 
 <div class="hero"><div class="wrap">
   <div>
@@ -157,7 +223,32 @@ header .wrap{flex-wrap:wrap}
   </div>
 </div></section>
 
-<section id="secteurs" class="alt"><div class="wrap">
+<section id="beton" class="alt"><div class="wrap">
+  <h2>Béton prémélangé</h2>
+  <p class="lead">Quatre classes de béton, selon la résistance dont votre ouvrage a besoin.</p>
+  <div class="alliance"><img src="fcc.jpg" alt="Force Construction Company (FCC)"><span>En partenariat avec <strong>Force Construction Company</strong> : le béton est livré avec leurs camions.</span></div>
+  <div class="grid">
+    <article class="card">
+      <div class="cls">C12/15</div>
+      <div class="b"><span class="cal">Classe C12/15</span><h3>Béton de propreté</h3><p>Couche sous les fondations et les dallages, pour obtenir une base plane et propre.</p><button class="btn pick" data-p="Béton C12/15" type="button">Demander ce béton</button></div>
+    </article>
+    <article class="card">
+      <div class="cls">C20/25</div>
+      <div class="b"><span class="cal">Classe C20/25</span><h3>Béton courant</h3><p>Dallages, trottoirs, chapes et petits ouvrages peu sollicités.</p><button class="btn pick" data-p="Béton C20/25" type="button">Demander ce béton</button></div>
+    </article>
+    <article class="card">
+      <div class="cls">C25/30</div>
+      <div class="b"><span class="cal">Classe C25/30</span><h3>Béton armé</h3><p>Poteaux, poutres, dalles et fondations en béton armé pour le bâtiment.</p><button class="btn pick" data-p="Béton C25/30" type="button">Demander ce béton</button></div>
+    </article>
+    <article class="card">
+      <div class="cls">C30/37+</div>
+      <div class="b"><span class="cal">Classe C30/37+</span><h3>Haute résistance</h3><p>Ouvrages très sollicités : grandes structures, ponts et dalles de forte portée.</p><button class="btn pick" data-p="Béton C30/37 et plus" type="button">Demander ce béton</button></div>
+    </article>
+  </div>
+  <p class="note">Précisez la classe et le volume dans votre demande de devis.</p>
+</div></section>
+
+<section id="secteurs"><div class="wrap">
   <h2>Nos secteurs d’activité</h2>
   <p class="lead">Choisissez votre domaine pour voir le matériau qui convient.</p>
   <div class="tabs" role="tablist" id="tabs"></div>
@@ -217,24 +308,53 @@ header .wrap{flex-wrap:wrap}
     <div class="info">
       <p><strong>WhatsApp</strong><a id="wa" href="#">+237 696 65 11 16</a></p>
       <p><strong>Téléphone</strong><a href="tel:+237670303865">+237 670 30 38 65</a></p>
+      <p><strong>E-mail</strong><a href="mailto:pacifiqueautosecteurgravier@gmail.com">pacifiqueautosecteurgravier@gmail.com</a></p>
       <p><strong>Adresse</strong>Douala, Yassa, en face de l’usine Broli</p>
       <p><strong>Horaires</strong>7 h – 18 h</p>
     </div>
     <form id="f">
       <label>Votre nom<input name="nom" required autocomplete="name"></label>
-      <label>Produit<select name="produit"><option>Gravier 5/15</option><option>Gravier 15/25</option><option>Sable concassé 0/5</option><option>Moellons</option></select></label>
-      <label>Quantité (tonnes ou nombre de camions)<input name="qte" required placeholder="Ex. : 3 camions"></label>
+      <label>Produit<select name="produit"><option>Gravier 5/15</option><option>Gravier 15/25</option><option>Sable concassé 0/5</option><option>Moellons</option><option>Béton C12/15</option><option>Béton C20/25</option><option>Béton C25/30</option><option>Béton C30/37 et plus</option></select></label>
+      <label>Quantité (tonnes, m³ ou nombre de camions)<input name="qte" required placeholder="Ex. : 3 camions"></label>
       <label>Lieu de livraison<input name="lieu" placeholder="Ex. : Douala, Logbessou"></label>
       <button class="btn" type="submit">Envoyer ma demande par WhatsApp</button>
     </form>
   </div>
 </div></section>
 
-<footer><div class="wrap">© <span id="y"></span> Pacifique Auto Secteur Gravier. Gravier et sable pour le bâtiment et les travaux publics.</div></footer>
+<footer>
+  <div class="wrap fgrid">
+    <div class="fabout">
+      <img class="flogo" src="logo.jpg" alt="Logo Pacifique Auto SARL">
+      <p>Pacifique Auto Secteur Gravier fournit du gravier et du sable de carrière à Douala, pour le bâtiment et les travaux publics.</p>
+    </div>
+    <div>
+      <h4>Contactez-nous</h4>
+      <ul>
+        <li><a id="wa2" href="#">WhatsApp : +237 696 65 11 16</a></li>
+        <li><a href="tel:+237670303865">Téléphone : +237 670 30 38 65</a></li>
+        <li><a href="mailto:pacifiqueautosecteurgravier@gmail.com">pacifiqueautosecteurgravier@gmail.com</a></li>
+        <li>Douala, Yassa, en face de l’usine Broli</li>
+        <li>7 h – 18 h</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Nos produits</h4>
+      <ul>
+        <li><a href="#produits">Gravier 5/15 mm</a></li>
+        <li><a href="#produits">Gravier 15/25 mm</a></li>
+        <li><a href="#produits">Sable concassé 0/5 mm</a></li>
+        <li><a href="#produits">Moellons</a></li>
+        <li><a href="#beton">Béton prémélangé</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fbar"><div class="wrap"><span>© <span id="y"></span> Pacifique Auto Secteur Gravier</span><a class="top" href="#" aria-label="Remonter en haut de la page">↑</a></div></div>
+</footer>
 
 <script>
 var CFG={wa:"237696651116"},link="https://wa.me/"+CFG.wa;
-document.getElementById("wa").href=link;document.getElementById("wa0").href=link;
+document.getElementById("wa").href=link;document.getElementById("wa0").href=link;document.getElementById("wa2").href=link;
 document.getElementById("y").textContent=new Date().getFullYear();
 function pick(p){document.querySelector("select[name=produit]").value=p;document.getElementById("devis").scrollIntoView()}
 Array.prototype.forEach.call(document.querySelectorAll(".pick"),function(b){b.addEventListener("click",function(){pick(b.dataset.p)})});
@@ -267,6 +387,50 @@ S.forEach(function(s,i){
   b.addEventListener("click",function(){show(i)});tabs.appendChild(b);
 });
 show(0);
+
+(function(){
+  var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion:reduce)").matches;
+  // Fenêtre d'agrandissement des photos
+  var lb=document.createElement("div");lb.className="lb";lb.setAttribute("role","dialog");lb.setAttribute("aria-label","Photo agrandie");
+  lb.innerHTML='<button type="button" aria-label="Fermer">×</button><img alt=""><p></p>';
+  document.body.appendChild(lb);
+  var lbi=lb.querySelector("img"),lbp=lb.querySelector("p");
+  function close(){lb.classList.remove("open")}
+  lb.addEventListener("click",close);
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")close()});
+  Array.prototype.forEach.call(document.querySelectorAll(".grid .card img,.fleet .card img,.works .card img"),function(im){
+    im.addEventListener("click",function(){lbi.src=im.src;lbi.alt=im.alt;lbp.textContent=im.alt;lb.classList.add("open")});
+  });
+  if(reduce||!("IntersectionObserver" in window))return;
+  // Apparition progressive au défilement
+  document.documentElement.classList.add("js");
+  var els=document.querySelectorAll(".card,.steps>div,.stats>div,.panel,form,section h2,.lead");
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+  Array.prototype.forEach.call(els,function(el,i){
+    var sib=Array.prototype.indexOf.call(el.parentNode.children,el);
+    el.style.transitionDelay=(sib%4)*90+"ms";
+    el.classList.add("rv");io.observe(el);
+  });
+  // Léger effet de profondeur sur la photo de la première page
+  var hero=document.querySelector(".hero"),tick=false;
+  function par(){tick=false;var y=window.scrollY||0;if(y<900)hero.style.backgroundPosition="0 0, center "+(62+y*0.025)+"%"}
+  window.addEventListener("scroll",function(){if(!tick){tick=true;requestAnimationFrame(par)}},{passive:true});
+})();
+
+(function(){
+  var nav=document.querySelector(".mainnav");
+  function closeAll(){[].forEach.call(nav.querySelectorAll(".dd"),function(li){li.classList.remove("open");li.firstElementChild.setAttribute("aria-expanded","false")})}
+  [].forEach.call(nav.querySelectorAll(".dd>button"),function(b){b.addEventListener("click",function(e){e.stopPropagation();var li=b.parentNode,o=!li.classList.contains("open");closeAll();
+    nav.style.setProperty("--navb",Math.round(nav.getBoundingClientRect().bottom)+"px");li.classList.toggle("open",o);b.setAttribute("aria-expanded",o?"true":"false")})});
+  nav.addEventListener("click",function(e){if(e.target.tagName==="A")closeAll()});
+  document.addEventListener("click",function(e){if(!nav.contains(e.target))closeAll()});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeAll()});
+  var items=[].slice.call(nav.querySelectorAll(".menu>li[data-sec]")),ids=["produits","beton","secteurs","flotte","chantiers","livraison","devis"],tick=false;
+  function spy(){tick=false;var y=(window.scrollY||0)+140,cur="top";
+    ids.forEach(function(id){var el=document.getElementById(id);if(el&&el.offsetTop<=y)cur=id});
+    items.forEach(function(li){li.classList.toggle("on",li.getAttribute("data-sec").split(" ").indexOf(cur)>-1)})}
+  window.addEventListener("scroll",function(){closeAll();if(!tick){tick=true;requestAnimationFrame(spy)}},{passive:true});spy();
+})();
 </script>
 </body>
 </html>
