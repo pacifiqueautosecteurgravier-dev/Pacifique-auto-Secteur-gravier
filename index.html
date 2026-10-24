@@ -21,9 +21,6 @@ a{color:inherit}
 .btn{display:inline-block;background:var(--gold);color:#0e1c2e;font:600 16px "Public Sans",sans-serif;text-decoration:none;padding:13px 22px;border:0;border-radius:4px;cursor:pointer}
 .btn.line{background:transparent;color:#fff;border:2px solid #fff}
 .btn:focus-visible,input:focus-visible,select:focus-visible,.tab:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
-.top{background:var(--navy);color:#b9c9de;font-size:14px;padding:8px 0}
-.top .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.top a{color:#fff;text-decoration:none;font-weight:600}
 header{background:var(--blue);color:#fff}
 header .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:16px;padding-bottom:16px}
 .brand{font:700 22px/1.1 "Archivo Narrow",Arial,sans-serif;text-decoration:none}
@@ -175,6 +172,7 @@ header .wrap>*{min-width:0}
   footer ul{gap:9px}
   footer li{overflow-wrap:anywhere}
 }
+@media(min-width:860px){.fleet .card{grid-column:span 3}}
 </style>
 </head>
 <body>
@@ -184,7 +182,6 @@ header .wrap>*{min-width:0}
 <pattern id="sd" width="9" height="9" patternUnits="userSpaceOnUse"><rect width="9" height="9" fill="#d9bd8a"/><circle cx="2" cy="2" r="1" fill="#b89a66"/><circle cx="6.5" cy="5" r="1" fill="#efd9ae"/><circle cx="3" cy="7" r=".8" fill="#c9a972"/></pattern>
 </defs></svg>
 
-<div class="top"><div class="wrap"><span>Douala, Yassa, en face de l’usine Broli · 7 h – 18 h</span><a id="wa0" href="#">WhatsApp +237 696 65 11 16</a></div></div>
 <header><div class="wrap">
   <a class="brand" href="#"><img class="logo" src="logo.jpg" alt="Logo Pacifique Auto SARL"><span>Pacifique Auto<br>Secteur Gravier</span></a>
   <a class="btn" href="#devis">Demander un devis</a>
@@ -281,15 +278,7 @@ header .wrap>*{min-width:0}
   <p class="lead">Des camions et des engins de carrière pour charger et livrer vos matériaux sans retard.</p>
   <div class="fleet">
     <article class="card"><img src="camions.jpg" alt="Parc de camions bennes blancs alignés" loading="lazy">
-      <div class="b"><span class="cal">Notre parc</span><h3>Camions bennes</h3><p>Une flotte de camions bennes pour livrer vos matériaux sans attendre.</p></div></article>
-    <article class="card"><img src="howo400.jpg" alt="Camion benne HOWO 400, 12 roues" loading="lazy">
-      <div class="b"><span class="cal">12 roues · HOWO 400</span><h3>Camion benne 8×4</h3><p>Notre camion de grande capacité pour livrer de grosses quantités de gravier et de sable.</p></div></article>
-    <article class="card"><img src="hohan.jpg" alt="Camion benne Sinotruk HOHAN 8x4" loading="lazy" style="object-position:center 72%">
-      <div class="b"><span class="cal">Sinotruk HOHAN</span><h3>Camion benne HOHAN 8×4</h3><p>Camion benne de chantier pour livrer gravier et sable en grandes quantités.</p></div></article>
-    <article class="card"><img src="howo.jpg" alt="Camion benne HOWO 371" loading="lazy">
-      <div class="b"><span class="cal">HOWO 371</span><h3>Camion benne HOWO</h3><p>Des camions robustes pour transporter gravier et sable sur tous les chantiers.</p></div></article>
-    <article class="card"><img src="mercedes.jpg" alt="Camion benne Mercedes-Benz blanc" loading="lazy">
-      <div class="b"><span class="cal">Mercedes-Benz</span><h3>Camion benne Mercedes</h3><p>Pour les livraisons de gravier et de sable en ville et sur les chantiers.</p></div></article>
+      <div class="b"><span class="cal">Notre flotte</span><h3>Notre flotte de camions robustes</h3><p>Des camions bennes pour livrer gravier et sable sur tous vos chantiers, sans attendre.</p></div></article>
     <article class="card"><img src="chargeuse.jpg" alt="Chargeuse sur pneus jaune en carrière" loading="lazy">
       <div class="b"><span class="cal">Chargeuse</span><h3>Chargeuse sur pneus</h3><p>Pour charger vite les camions en carrière, avec le bon matériau à chaque fois.</p></div></article>
   </div>
@@ -297,7 +286,7 @@ header .wrap>*{min-width:0}
 
 <section id="chantiers" class="alt"><div class="wrap">
   <h2>Nos chantiers avec RAZEL</h2>
-  <p class="lead">Des ouvrages réalisés avec notre partenaire RAZEL-BEC, où nos matériaux font la différence.</p>
+  <div class="alliance"><img src="razel.png" alt="RAZEL-BEC, partenaire officiel"><span>Des ouvrages réalisés avec notre partenaire <strong>RAZEL-BEC</strong>, où nos matériaux font la différence.</span></div>
   <div class="works">
     <article class="card"><img src="stadetravaux.jpg" alt="Construction du stade d’Olembe" loading="lazy">
       <div class="b"><span class="cal">Chantier</span><h3>Construction du stade d’Olembe</h3></div></article>
@@ -375,7 +364,7 @@ header .wrap>*{min-width:0}
 
 <script>
 var CFG={wa:"237696651116"},link="https://wa.me/"+CFG.wa;
-document.getElementById("wa").href=link;document.getElementById("wa0").href=link;document.getElementById("wa2").href=link;
+document.getElementById("wa").href=link;document.getElementById("wa2").href=link;
 document.getElementById("y").textContent=new Date().getFullYear();
 function pick(p){document.querySelector("select[name=produit]").value=p;document.getElementById("devis").scrollIntoView()}
 Array.prototype.forEach.call(document.querySelectorAll(".pick"),function(b){b.addEventListener("click",function(){pick(b.dataset.p)})});
