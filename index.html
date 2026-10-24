@@ -415,7 +415,7 @@ show(0);
   // Apparition progressive au défilement
   document.documentElement.classList.add("js");
   var els=document.querySelectorAll(".card,.steps>div,.stats>div,.panel,form,section h2,.lead");
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle("in",e.isIntersecting)})},{threshold:.1});
   Array.prototype.forEach.call(els,function(el,i){
     var sib=Array.prototype.indexOf.call(el.parentNode.children,el);
     el.style.transitionDelay=(sib%4)*90+"ms";
